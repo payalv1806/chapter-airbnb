@@ -1,0 +1,10 @@
+.welcome_page {
+    font-family: Arial, sans-serif;
+    background-color: #0e81c4;
+    margin: 0;
+    padding: 0;
+}
+header h1 {
+    text-align: center;
+    padding: 20px;
+}

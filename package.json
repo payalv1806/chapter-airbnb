@@ -7,9 +7,14 @@
     "start": "node app.js"
   },
   "devDependencies": {
-    "nodemon": "^3.1.11"
+    "autoprefixer": "^10.4.23",
+    "nodemon": "^3.1.11",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18"
   },
   "dependencies": {
+    "body-parser": "^2.2.1",
+    "ejs": "^3.1.10",
     "express": "^5.2.1"
   },
   "author": "",

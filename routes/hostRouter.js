@@ -1,17 +1,30 @@
 // Core Module
 const path = require('path');
+
 // External Module
 const express = require('express');
 const hostRouter = express.Router();
 
 // Show form
 hostRouter.get("/add-home", (req, res) => {
-  res.sendFile(path.join(__dirname,'..', 'views', 'add_homepage.html'));
+  res.render('addhome', {title: "Airbnb Home"});
 });
 
-// Handle form submission
-hostRouter.post("/add-home", (req, res) => {
-  res.sendFile(path.join(__dirname,'..', 'views', 'home_added.html'));
+const registeredHomes = [];
+
+hostRouter.post('/add-home', (req, res) => {
+  registeredHomes.push({
+    houseName: req.body.houseName,
+    pricePerNight: req.body.pricePerNight,
+    location: req.body.location,
+    rating: req.body.rating,
+    photoUrl: req.body.photoUrl
+  });
+
+  res.redirect('/');
 });
 
-module.exports = hostRouter;
+module.exports= {
+  hostRouter,
+  registeredHomes
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Cozy Cottage",
+    "pricePerNight": 120,
+    "location": "Lakeview",
+    "rating": 4.5,
+    "photoUrl": "https://tse1.mm.bing.net/th/id/OIP.Mg35A1oSbG4JKdmzNcUQagHaEJ?rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "id": 2,
+    "name": "Modern Apartment",
+    "pricePerNight": 150,
+    "location": "Downtown",
+    "rating": 4.8,
+    "photoUrl": "https://img.peerspace.com/image/upload/c_crop,g_custom/g_auto,c_fill,q_auto,f_auto,fl_progressive:steep,w_1200,ar_1/fyabizgxrtna6aetrsxl"
+  }
+]

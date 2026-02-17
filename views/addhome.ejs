@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>airbnb Home</title>
+  <link rel="stylesheet" href="/public/stylehome.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+  <header class="bg-red-500 text-white py-6 px-4 shadow-md">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl font-bold">Welcome to Airbnb Web page!</h2>
+    </div>
+  </header><script>
+  fetch('/user/homes')
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+    })</script>
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold text-gray-900 mb-8">Add a Home</h1>
+
+    <!-- Fixed form action -->
+    <form action="/host/add-home" method="POST" class="bg-white p-8 rounded-lg shadow-lg max-w-2xl">
+      <div class="space-y-4">
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">House Name</label>
+          <input type="text" name="houseName" placeholder="Enter the name of your house" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 transition"/>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">Price per Night</label>
+          <input type="number" name="pricePerNight" placeholder="Enter the price per night" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 transition"/>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">Location</label>
+          <input type="text" name="location" placeholder="Enter the location of your house" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 transition"/>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">Rating</label>
+          <input type="text" name="rating" placeholder="Enter the rating of your house" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 transition"/>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">Photo URL</label>
+          <input type="text" name="photoUrl" placeholder="Enter the photo URL" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 transition"/>
+        </div>
+      </div>
+      <button type="submit" class="w-full mt-8 bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg transition duration-200">Add Home</button>
+    </form>
+  </main>
+</body>
+</html>

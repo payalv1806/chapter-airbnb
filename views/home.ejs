@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airbnb</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+      <h1 class="text-3xl font-bold text-gray-900">Welcome to Airbnb..!</h1>
+    </div>
+  </header>
+  
+  <main class="max-w-7xl mx-auto px-4 py-8">
+    <div class="mb-8">
+      <script>
+        fetch('/user/homes')
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+          });
+          </script>
+          
+      <a href="/host/add-home" class="inline-block bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 px-6 rounded-lg transition">
+        Add Home
+      </a>
+    </div>
+
+    <section>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Available Homes</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <% registeredHomes.forEach(home => { %>
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+      <div class="relative h-48 overflow-hidden bg-gray-200">
+        <img src="<%= home.photoUrl %>" alt="<%= home.houseName %>" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+      </div>
+
+      <div class="p-4">
+        <h3 class="text-xl font-bold text-gray-900 mb-2"><%= home.houseName %></h3>
+
+        <p class="text-gray-600 text-sm mb-4">
+          <span class="inline-block">📍</span>
+          <%= home.location %>
+        </p>
+
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <span class="text-yellow-400 text-lg">⭐</span>
+            <span class="ml-1 font-semibold text-gray-900"><%= home.rating %></span>
+          </div>
+          <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Rating</span>
+        </div>
+
+        <div class="border-t pt-4">
+          <div class="text-2xl font-bold text-rose-500">
+            ₹<%= home.pricePerNight %>
+            <span class="text-sm font-normal text-gray-600">/night</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-4 pb-4">
+        <button class="w-full bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 px-4 rounded-lg transition">
+          View Details
+        </button>
+      </div>
+    </div>
+  <% }) %>
+</div>
+    </section>
+  </main>
+</body>
+</html>
