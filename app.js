@@ -24,10 +24,6 @@ app.get("/", (req, res) => {
 // Mount routers
 app.use("/user", userRouter);
 app.use("/host", hostRouter);
-app.use("/uploads",
-express.static("/uploads"));
-app.use(express.static(path.join(__dirname, '../public/stylehome.css')));
-
 
 // 404 Page
 app.use((req, res) => {

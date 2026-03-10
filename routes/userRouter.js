@@ -1,4 +1,5 @@
 // Core Module
+const fs = require('fs'); 
 const path = require('path');
 
 // External Module
@@ -8,16 +9,11 @@ const homes= require('../data/homes.json');
 
 const {registeredHomes} = require('./hostRouter');
 
-userRouter.get("/", (req, res) => {
-  res.json('homes',{homes});
-});
-
-// Home Page
-userRouter.get("/", (req, res, next) => {
-  console.log(registeredHomes);
+userRouter.get('home', (req, res) => {
   res.render('home', {
-    title: "Airbnb Home", 
-    registeredHomes: registeredHomes});
+    title: "Airbnb Home",
+    registeredHomes: homes
+  });
 });
 
 module.exports = userRouter;
