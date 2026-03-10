@@ -7,13 +7,12 @@ const express = require('express');
 const userRouter = express.Router();
 const homes= require('../data/homes.json');
 
-const {registeredHomes} = require('./hostRouter');
+const registeredHomes = require('./hostRouter');
 
-userRouter.get('home', (req, res) => {
+userRouter.get('/', (req, res) => {
   res.render('home', {
     title: "Airbnb Home",
     registeredHomes: homes
   });
 });
-
 module.exports = userRouter;

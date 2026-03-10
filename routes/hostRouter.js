@@ -10,7 +10,7 @@ hostRouter.get("/add-home", (req, res) => {
   res.render('addhome', {title: "Airbnb Home"});
 });
 
-const {registeredHomes} = [];
+const registeredHomes = [];
 
 hostRouter.post('/add-home', (req, res) => {
   registeredHomes.push({
@@ -21,10 +21,10 @@ hostRouter.post('/add-home', (req, res) => {
     photoUrl: req.body.photoUrl
   });
 
-  res.redirect('/user');   // ✅ change here
+  res.redirect('/user');
 });
 
-module.exports= {
+module.exports = {
   hostRouter,
   registeredHomes
-}
+};
