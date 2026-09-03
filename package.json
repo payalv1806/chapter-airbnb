@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "server": "node app.js",
+    "dev": "nodemon app.js",
+    "seed": "node scripts/seed.js",
+    "client": "npm run dev --prefix frontend",
+    "build:client": "npm run build --prefix frontend"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.23",
@@ -13,9 +17,14 @@
     "tailwindcss": "^4.1.18"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "body-parser": "^2.2.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "ejs": "^3.1.10",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.9.4"
   },
   "author": "",
   "license": "ISC",
